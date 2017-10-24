@@ -13,7 +13,7 @@ for i in range(26901):
     node_dict[nodes[i]] = i
 
 k = 1
-for i in range(26901):
+for i in range(960000):
     for j in range(20):
         if recommendation[i][j] == -1:
             continue
@@ -21,7 +21,7 @@ for i in range(26901):
             try:
                 recommendation[i][j] = node_dict[recommendation[i][j]]
             except KeyError:
-                node_dict[recommendation[i][j]] = 26900 + k
+                node_dict[recommendation[i][j]] = 960000 + k
                 recommendation[i][j] =  node_dict[recommendation[i][j]]
                 k += 1
 rec = recommendation.tolist()
@@ -33,28 +33,28 @@ def ftn(row):
     A = []
     B = []
     try:
-        if node_dict[row[0]]<26901:
+        if node_dict[row[0]]<960000:
             A = rec[node_dict[row[0]]]
-            for j in range(26901):
+            for j in range(960000)
                 if node_dict[row[0]] in rec[j]:
                     A.append(j)
                     A.extend(rec[j])
         else:
-            for j in range(26901):
+            for j in range(960000):
                 if node_dict[row[0]] in rec[j]:
                     A.append(j)
                     A.extend(rec[j])
     except KeyError:
         return -1
     try:
-        if node_dict[row[1]]<26901:
+        if node_dict[row[1]]<960000:
             B = rec[node_dict[row[1]]]
-            for j in range(26901):
+            for j in range(960000):
                 if node_dict[row[1]] in rec[j]:
                     B.append(j)
                     B.extend(rec[j])
         else:
-            for j in range(26901):
+            for j in range(960000):
                 if node_dict[row[1]] in rec[j]:
                     B.append(j)
                     B.extend(rec[j])
@@ -79,7 +79,7 @@ for key, value in node_dict.iteritems():
 G = nx.MultiGraph()
 G.add_nodes_from(node_lst)
 
-for i in range(26901):
+for i in range(960000):
     edge_weights = [1]*20
     node_i = [i for j in range(20)]
     neighbor_i = [x for x in rec[i]]
