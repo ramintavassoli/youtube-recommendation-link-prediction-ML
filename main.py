@@ -113,19 +113,6 @@ if __name__ == '__main__':
     pool = Pool()
     result = pool.map(ftn, a)
 #
-#ins = np.asarray(result)
-#np.savetxt("final_di.csv", ins, delimiter=",")
-
-#con_components = list(nx.connected_component_subgraphs(G))
-#component_number = 0
-#component_dict = {}
-#
-#for component in con_components:
-#    nodes_ = component.nodes()
-#    for node in nodes_:
-#        component_dict[node] = component_number
-#    component_number += 1
-
 #def ftn (duo):
 #    decision = 0
 #    try:
@@ -144,12 +131,7 @@ if __name__ == '__main__':
 #        pass
 #    return decision
 
-#nx.write_gml(G,"test.gml")
-#mat = nx.laplacian_matrix(G)
-
-
-
-#==============================================================================
+#=========================Conductance Minimization================================
 # for node in G.nodes():
 #     if G.degree(node) == 0:
 #         G.remove_node(node)
