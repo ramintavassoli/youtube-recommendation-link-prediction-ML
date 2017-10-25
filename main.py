@@ -9,7 +9,7 @@ recommendation = df[['1','2','3','4','5','6','7','8','9','10','11','12','13','14
 nodes = df['video_id'].values.tolist()
 node_dict = {}
 
-for i in range(26901):
+for i in range(960000):
     node_dict[nodes[i]] = i
 
 k = 1
